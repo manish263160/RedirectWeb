@@ -38,7 +38,7 @@ public class ShareController {
 	if(id != null) {
 		idfor = Integer.parseInt(id);
 	}else {
-		idfor =0;
+		return "defautPage";
 	}
 	logger.info("the value of Idfor ====="+idfor);
 	String hostUrl= "http://showoff.tv/";
