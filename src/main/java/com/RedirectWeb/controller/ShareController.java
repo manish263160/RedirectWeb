@@ -36,7 +36,7 @@ public class ShareController {
 		
 	logger.info("id got heree iss specific ====="+specific+"===================================="+id);
 	int idfor;
-	if(id != null) {
+	if(id != null && !id.equals("index")) {
 		idfor = Integer.parseInt(id);
 	}else {
 		return "defautPage";
