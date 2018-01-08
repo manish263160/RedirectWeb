@@ -55,9 +55,9 @@ public class ShareController {
 			tableName ="uploaded_image";
 			 UploadedImage imgdata = userService.getImageByImgId(idfor , tableName , false);
 			 ogmap.put("ogurl", hostUrl+"/"+specific+"/"+id);
-				ogmap.put("ogtitle", imgdata.getImageName());
+				ogmap.put("ogtitle", imgdata.getImageName() != null ? imgdata.getImageName() : "Showoff.tv shared Image");
 				ogmap.put("ogimage", imgdata.getImageUrl());
-				ogmap.put("ogdescription", imgdata.getImageLink());
+				ogmap.put("ogdescription", imgdata.getImageLink()!=null ?imgdata.getImageLink() : "Showoff.tv" );
 		}
 		model.addAttribute("ogmap", ogmap);
 		return "sharedpaage";
