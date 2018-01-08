@@ -13,7 +13,7 @@
 <meta property="og:image:height" content="300" />
 <meta property="og:description" content="${ogmap.description}" />
 
- <meta property="twitter:card" content="summary" />
+ <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="${ogmap.ogurl }" />
 <meta property="twitter:title" content="${ogmap.ogtitle }" />
 <meta property="twitter:description" content="${ogmap.description}" />
