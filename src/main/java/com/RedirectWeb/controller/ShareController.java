@@ -3,18 +3,14 @@ package com.RedirectWeb.controller;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletResponse;
-
 import org.apache.log4j.Logger;
 import org.apache.velocity.app.VelocityEngine;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.ui.velocity.VelocityEngineUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.RedirectWeb.models.UploadedImage;
 import com.RedirectWeb.models.UploadedVideo;
@@ -29,7 +25,12 @@ public class ShareController {
 	private @Autowired VelocityEngine velocityEngine;
 	
 	private static final Logger logger = Logger.getLogger(ShareController.class);
-	
+	@RequestMapping(value = "/PrerenderWeb}", method = RequestMethod.GET)
+	public String defaultMethod(ModelMap model ) {
+		logger.info("default page call");
+			return "defautPage";
+		}
+		
 	@RequestMapping(value = "/PrerenderWeb/{specific}/{id}", method = RequestMethod.GET)
 	public String sayHelloAgain(ModelMap model,@PathVariable String specific , @PathVariable String id ) {
 		
